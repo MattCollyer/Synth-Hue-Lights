@@ -26,4 +26,4 @@ class Light:
 				self.saturation = state['sat']
 
 	def to_dict(self):
-		return {'Light #': self.light_id, 'is on': self.on, 'bri': self.brightness, 'hue': self.hue, 'sat': self.saturation }
+		return {'Light': self.light_id, 'is on': self.on, 'bri': self.brightness, 'hue': self.hue, 'sat': self.saturation }

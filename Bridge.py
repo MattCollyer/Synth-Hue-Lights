@@ -9,7 +9,7 @@ class Bridge:
 	# There is a default unique id to every light, we're not using that.
 	lights = []
 
-	def __init__(self, ip, user):
+	def __init__(self, ip = '192.168.1.2', user = 'jIOM2WREtiBG6eWt2bL9kBAqtdbsOy-B81LTnzHw'):
 		self.ip = ip
 		self.user = user
 		self.url = 'http://' + ip + '/api/' + user
@@ -38,7 +38,7 @@ class Bridge:
 		response = requests.put(self.url + '/lights/' + str(light.light_id) + '/state', data=json.dumps(new_state))
 		if (self.success(response)):
 			light.update(new_state)
-			print(light.to_dict())
+			# print(light.to_dict())
 
 	def set(self, lights, new_state):
 		if (lights == None): #if nothing passed in assume all.
